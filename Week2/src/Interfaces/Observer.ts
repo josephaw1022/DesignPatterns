@@ -1,11 +1,5 @@
-
-
-export interface Observer { 
-    registerObserver: Function , 
-    removeObserver: Function  ,  
-    notifyObserver : Function , 
-} ; 
-
-
-
-
+export interface Observer {
+  registerObserver: Function;
+  removeObserver: Function;
+  notifyObserver: Function;
+}

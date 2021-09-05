@@ -1,6 +1,4 @@
-
-
-export interface Subject { 
-    update: Function, 
-    display:Function , 
-}; 
+export interface Subject {
+  update: Function;
+  display: Function;
+}
