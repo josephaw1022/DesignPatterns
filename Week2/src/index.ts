@@ -4,18 +4,13 @@ import Book from "./Entities/Book";
 import Store from "./Entities/Store";
 
 
-// const BestSellers = require('./Entities/BestSellers')
-// const Book = require('./Entities/Book')
-// const Store = require('./Entities/Store')
-// const Customer = require('./Entities/Customer');
 
-// Setting classes 
-
+// Setting instance of classes up 
 const bestSellers = new BestSellers;
 const myStore = new Store(bestSellers.bestSellers)
 const myCustomer = new Customer(bestSellers.bestSellers, "Amy", "Smith");
 
-// Book Classes 
+
 const book1 = new Book("The Bust", "Ashely", "Audrain");
 const book2 = new Book("A Crooked Tree", "Una", "Mannion")
 const book3 = new Book("Let Me Tell You What I Mean", "Joan", "Didion")
@@ -27,7 +22,7 @@ const book8 = new Book("Girl A", "Abigail", "Dean")
 const book9 = new Book("The Kindest Lie", "Nancy", "Johnson")
 const book10 = new Book("My Year Abroad", "Chang", "Rae-Lee")
 
-// Book list of books 
+// Setting booklist of books so we can iterate through each book object made 
 const bookList = [
   book1,
   book2,
@@ -40,9 +35,6 @@ const bookList = [
   book9,
   book10,
 ]
-
-
-
 
 const BookDriver = (): void => {
   const run = (): void => {
