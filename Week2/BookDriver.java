@@ -20,12 +20,17 @@ public class BookDriver {
         bestSellers.addBook(new Book("Let Me Tell You What I Mean", "Joan", "Didion"));
         bestSellers.addBook(new Book("The Wife Upstairs", "Racheal", "Hawkins"));
         bestSellers.addBook(new Book("Summerwater", "Sarah", "Moss"));
+
+
         bestSellers.addBook(new Book("Life Among the Terranauts", "Caitlin", "Horrocks"));
         bestSellers.addBook(new Book("The Removed", "Brandon", "Hobson"));
+
+
+        
         bestSellers.addBook(new Book("Girl A", "Abigail", "Dean"));
         bestSellers.addBook(new Book("The Kindest Lie", "Nancy", "Johnson"));
         bestSellers.addBook(new Book("My Year Abroad", "Chang", "Rae-Lee"));
-    
+
         myStore.display();
         myCustomer.display();
     }
