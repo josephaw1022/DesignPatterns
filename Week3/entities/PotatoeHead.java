@@ -1,11 +1,11 @@
 package entities;
 
 public class PotatoeHead extends Character {
-
+    // constructor 
     public PotatoeHead() {
         // hat
         this.sections.add("  ");
-        this.sections.add(" ") ; 
+        this.sections.add("  ") ; 
         this.sections.add("    _____");
         this.sections.add("  /        \\");
         // eyes
