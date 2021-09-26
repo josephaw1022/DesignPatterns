@@ -15,6 +15,11 @@ public class Airline {
         this.flights = new Flight[0] ; 
     }
 
+    
+    /** 
+     * @param flights
+     * @return Flight[]
+     */
     private Flight[] growArray(ArrayList<Flight> flights) { 
         
         Flight[] back2Array = new Flight[flights.size()]; 
@@ -22,6 +27,14 @@ public class Airline {
         return back2Array; 
     }
 
+    
+    /** 
+     * @param flightNum
+     * @param from
+     * @param to
+     * @param duration
+     * @param transfers
+     */
     public void addFlight(String flightNum, String from , String to, int duration ,int transfers ){ 
         Flight tempFlightObject = new Flight(flightNum , from , to , duration, transfers) ; 
         ArrayList<Flight> flightList2ArrayList = new ArrayList<Flight>(Arrays.asList(this.flights)) ; 
@@ -29,10 +42,18 @@ public class Airline {
         this.flights = this.growArray(flightList2ArrayList); 
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getTitle(){ 
         return this.title ; 
     }
 
+    
+    /** 
+     * @return FlightIterator
+     */
     public FlightIterator createIterator(){
         FlightIterator tempObject = new FlightIterator(this.flights); 
         return tempObject ; 
