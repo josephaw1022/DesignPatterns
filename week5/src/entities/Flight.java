@@ -1,8 +1,5 @@
 package entities;
 
-
-
-
 public class Flight {
     String flightNum ; 
     String from ;   
@@ -18,8 +15,8 @@ public class Flight {
         this.transfers = transfers ; 
     }
 
-    
     /** 
+     * getter
      * @return String
      */
     public String getFrom(){ 
@@ -28,6 +25,7 @@ public class Flight {
 
     
     /** 
+     * getter 
      * @return String
      */
     public String getTo(){ 
@@ -36,6 +34,7 @@ public class Flight {
 
     
     /** 
+     * getter 
      * @return int
      */
     public int getDuration(){ 
@@ -44,6 +43,7 @@ public class Flight {
 
     
     /** 
+     * getter 
      * @return int
      */
     public int getNumTransfer(){ 
@@ -52,6 +52,7 @@ public class Flight {
 
     
     /** 
+     * display Flight Object's attributes via a string 
      * @return String
      */
     public String toString() { 

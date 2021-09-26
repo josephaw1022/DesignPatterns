@@ -29,6 +29,7 @@ public class Airline {
 
     
     /** 
+     * add flight to flights list 
      * @param flightNum
      * @param from
      * @param to
@@ -44,6 +45,7 @@ public class Airline {
 
     
     /** 
+     * getter
      * @return String
      */
     public String getTitle(){ 
@@ -52,6 +54,7 @@ public class Airline {
 
     
     /** 
+     * creates an instance of an iterator and returns it 
      * @return FlightIterator
      */
     public FlightIterator createIterator(){

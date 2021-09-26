@@ -1,6 +1,4 @@
 package entities;
-import java.util.Arrays; 
-import java.util.ArrayList; 
 
 
 public class FlightIterator implements Iterator {

@@ -1,6 +1,4 @@
 import entities.Airline ;
-import entities.Flight ; 
-import entities.FlightIterator ; 
 import entities.Iterator; 
 
 public class AirlineDriver {
