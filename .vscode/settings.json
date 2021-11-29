@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "week6/src",
         "week5/src",
-        "week6/src"
+        "AdapterDesign/src"
     ]
 }
