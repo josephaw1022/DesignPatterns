@@ -1,44 +1,72 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Date;
 
-public class MedicalRecordAdapter implements HealthRecord {
+public class MedicalRecordAdapter implements MedicalRecord {
 
-    String name;
-    Date birthDate;
-    String gender;
-    ArrayList<String> history;
+  private String firstName;
+  private String lastName;
+  private Date birthDate;
+  private Gender gender;
+  private ArrayList<Visit> visits; 
 
+  public MedicalRecordAdapter (HealthRecord record) {
+    String[] fullName = record.getName().split(" ", 3);
+    this.firstName = fullName[0];
+    this.lastName = fullName[1];
+    this.birthDate = record.getBirthdate();
+    this.gender =
+      record.getGender() == "Male"
+        ? Gender.MALE
+        : record.getGender() == "Woman" ? Gender.FEMALE : Gender.OTHER;
 
-    public void constructor(CarolinaHealthRecord record){
-        this.name = record.getName() ; 
-        this.birthDate = record.getBirthdate(); 
-        this.gender = record.getGender(); 
-        this.history = record.getHistory();  
+    ArrayList<String> tempList = record.getHistory();
+    ArrayList<Visit> newList = new ArrayList<Visit>();
+    for (int i = 0; i < tempList.size(); i++) {
+      String tempString = tempList.get(i);
+      String[] tempArray = tempString.split(" ", 3);
+      newList.add(new Visit(new Date(tempArray[0]), true, tempArray[2]));
     }
+    this.visits = newList;
+  }
 
+  public String getFirstName() {
+    return firstName;
+  }
 
+  public String getLastName() {
+    return lastName;
+  }
 
-    public String getName() {
-        return this.name;
-    }
+  public Date getBirthday() {
+    return birthDate;
+  }
 
-    public Date getBirthdate() {
-        return this.birthDate;
-    }
+  public Gender getGender() {
+    return gender;
+  }
 
-    public String getGender() {
-        return this.gender;
-    }
+  public void addVisit(Date date, boolean well, String description) {
+    visits.add(new Visit(date, well, description));
+  }
 
-    public void addHistory(Date visitDate, boolean well, String details) {
-        String wellnessStatus = well ? "Well Visit" : "Sick Visit";
-        String Record = visitDate + ":\t" + wellnessStatus + ",\t" + details;
-        this.history.add(Record);
+  public ArrayList<Visit> getVisitHistory() {
+    return visits ; 
+  }
 
-    }
-
-    public ArrayList<String> getHistory(){
-        return this.history; 
-    }
-
+  public String toString() { 
+    return new SCMedicalRecord(firstName, lastName, birthDate, gender).toString(); 
+  }
 }
+// public interface MedicalRecord {
+//     public String getFirstName();
+//     public String getLastName();
+//     public Date getBirthday();
+//     public Gender getGender();
+//     public void addVisit(Date date, boolean well, String description);
+//     public ArrayList<Visit> getVisitHistory();
+//     public String toString();
+// }
